@@ -106,6 +106,7 @@ type Transaction struct {
 
 func (t *SimpleChaincode) Init(stub *shim.ChaincodeStub, function string, args []string) ([]byte, error) {
     // Initialize the collection of commercial paper keys
+    fmt.Println("Blockchain Flow is Starting")
     fmt.Println("Initializing paper keys collection")
 	var blank []string
 	blankBytes, _ := json.Marshal(&blank)
@@ -163,6 +164,7 @@ func (t *SimpleChaincode) createAccount(stub *shim.ChaincodeStub, args []string)
         return nil, errors.New("createAccount accepts a single username argument")
     }
     username := args[0]
+    fmt.Println("Blockchain Flow is Starting")
     
     // Build an account object for the user
     var assetIds []string
